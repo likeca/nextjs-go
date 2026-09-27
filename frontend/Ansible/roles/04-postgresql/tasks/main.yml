@@ -1,0 +1,53 @@
+# Install PostgreSQL
+- name: Install latest version PostgreSQL packages
+  ansible.builtin.apt:
+    pkg:
+      - postgresql-common
+    state: present
+    update_cache: true
+
+- name: Automated postgresql repository configuration
+  ansible.builtin.expect:
+    command: /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh
+    responses:
+      'Press Enter to continue, or Ctrl-C to abort.': ''
+
+- name: APT Update
+  ansible.builtin.apt:
+    update_cache: true
+
+- name: Upgrade all packages to the latest version
+  ansible.builtin.apt:
+    name: '*'
+    state: latest
+
+- name: Update all packages to the latest dist version
+  ansible.builtin.apt:
+    upgrade: dist
+
+- name: Install latest version PostgreSQL packages
+  ansible.builtin.apt:
+    pkg:
+      - postgresql-18
+      # - gdal-bin
+      # - postgis
+    state: present
+    update_cache: true
+
+- name: start PostgreSQL
+  ansible.builtin.service:
+    name: postgresql
+    enabled: yes
+    state: started
+
+- name: Remove postgres user password
+  ansible.builtin.shell: passwd -d postgres
+
+# Clean up
+- name: Remove useless packages from the cache
+  ansible.builtin.apt:
+    autoclean: yes
+
+- name: Remove dependencies that are no longer required
+  ansible.builtin.apt:
+    autoremove: yes

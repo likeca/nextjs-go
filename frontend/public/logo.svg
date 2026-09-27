@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-labelledby="logo-title logo-desc">
+  <title id="logo-title">Next.js SaaS Boilerplate</title>
+  <desc id="logo-desc">A rocket launching through code brackets, representing a fast SaaS starter kit</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4338CA"/>
+      <stop offset="50%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <linearGradient id="flame" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#F97316"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="512" height="512" rx="108" fill="url(#bg)"/>
+  <!-- Rocket body -->
+  <path d="M256 88 C224 148 210 218 210 274 L302 274 C302 218 288 148 256 88Z" fill="white"/>
+  <!-- Rocket window -->
+  <circle cx="256" cy="208" r="22" fill="#6366F1"/>
+  <!-- Left fin -->
+  <path d="M210 246 L166 302 L210 282Z" fill="white" opacity="0.85"/>
+  <!-- Right fin -->
+  <path d="M302 246 L346 302 L302 282Z" fill="white" opacity="0.85"/>
+  <!-- Outer flame -->
+  <path d="M224 274 L256 354 L288 274" fill="url(#flame)"/>
+  <!-- Inner flame -->
+  <path d="M234 274 L256 334 L278 274" fill="#FBBF24"/>
+  <!-- Code bracket left -->
+  <path d="M124 188 L88 228 L124 268" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Code bracket right -->
+  <path d="M388 188 L424 228 L388 268" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

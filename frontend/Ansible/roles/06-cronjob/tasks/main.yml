@@ -1,0 +1,20 @@
+# Clean Logs
+# * 1 * * * /usr/bin/find /var/log/ -name '*.gz' -mtime +7 -exec rm -f {} \;
+# * 1 * * * /usr/bin/find /home/ubuntu/Backup/ -name '*.gz' -mtime +7 -exec rm -f {} \;
+# * 1 * * * /usr/bin/find /home/ubuntu/Backup/ -name '*.xz' -mtime +7 -exec rm -f {} \;
+
+# Filesystem Backup
+# 0 2 * * * /home/ubuntu/Auxilium/scripts/backup.sh
+
+# Renew Letsencrypt SSL certificate, Certbot automatic renewal.
+# 0 4 * * * /usr/bin/certbot renew --pre-hook "nginx -s stop" --post-hook "nginx"
+
+# Cleanup /var/log/*.gz over 30 days
+# * 1 * * * /usr/bin/find /var/log/ -name '*.gz' -mtime +30 -exec rm -f {} \;
+
+- name: Cleanup /var/log/*.gz over 30 days
+  cron:
+    name: Cleanup /var/log/*.gz over 30 days
+    minute: "0"
+    hour: "3"
+    job: "/usr/bin/find /var/log/ -name \"*.gz\" -mtime +30 -exec rm -f {} \\;"

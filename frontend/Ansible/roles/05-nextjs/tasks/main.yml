@@ -1,0 +1,96 @@
+# Perquisite
+# ssh-keygen -t rsa -b 2048
+# Github: Add id_rsa.pub in "Settings > Deploy keys"
+
+# Manual install nvm and nodejs
+# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.5/install.sh | bash
+# \. "$HOME/.nvm/nvm.sh"
+# nvm install 24
+# npm install -g pnpm
+# node -v
+# npm -v
+# pnpm -v
+
+- name: Git clone source code
+  become_user: '{{ ansible_user }}'
+  git:
+    repo: 'git@github.com:{{ git_username }}/{{ git_repository }}.git'
+    dest: /home/{{ ansible_user }}/{{ project_directory }}
+    accept_hostkey: yes
+    
+# # Config Nginx for Django
+# - name: Create /usr/share/nginx/html/static/ for Django
+#   file:
+#     path: /usr/share/nginx/html/static/
+#     state: directory
+#     owner: '{{ ansible_user }}'
+#     group: 'nginx'
+#     mode: 0755
+
+# - name: Create /usr/share/nginx/html/media/ for Django
+#   file:
+#     path: /usr/share/nginx/html/media/
+#     state: directory
+#     owner: '{{ ansible_user }}'
+#     group: 'nginx'
+#     mode: 0755
+
+# # daphne services
+# - name: Create /var/log/daphne/ for daphne
+#   file:
+#     path: /var/log/daphne/
+#     state: directory
+#     owner: '{{ ansible_user }}'
+#     group: '{{ ansible_user }}'
+#     mode: 0755
+
+# - name: Deploy /etc/systemd/system/daphne.service
+#   template:
+#     src: daphne.service
+#     dest: /etc/systemd/system/daphne.service
+
+# - name: Start daphne
+#   systemd:
+#     name: daphne
+#     enabled: yes
+#     state: restarted
+#     daemon_reload: yes
+
+# # Update nginx.conf
+# - name: Copy nginx.conf to /etc/nginx/nginx.conf
+#   template:
+#     src: 'nginx.conf'
+#     dest: '/etc/nginx/nginx.conf'
+
+# # Update django.conf
+# - name: Copy nginx.conf to /etc/nginx/conf.d/django.conf
+#   template:
+#     src: 'django.conf'
+#     dest: '/etc/nginx/conf.d/django.conf'
+
+# - name: Start nginx
+#   ansible.builtin.service:
+#     name: nginx
+#     enabled: yes
+#     state: reloaded
+
+# Django Queue, manual update service need to run 'sudo systemctl daemon-reload'
+# - name: Create /var/log/djangoq/ for djangoq
+#   file:
+#     path: /var/log/djangoq/
+#     state: directory
+#     owner: "{{ ansible_user }}"
+#     group: "{{ ansible_user }}"
+#     mode: 0755
+
+# - name: Deploy /etc/systemd/system/djangoq.service
+#   template:
+#     src: djangoq.service
+#     dest: /etc/systemd/system/djangoq.service
+
+# - name: Start djangoq
+#   systemd:
+#       name: djangoq
+#       enabled: yes
+#       state: restarted
+#       daemon_reload: yes

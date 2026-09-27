@@ -1,0 +1,401 @@
+[
+  {
+    "model": "discovery.thingtodo",
+    "pk": "154149b3-2936-5a53-812f-401f99aa3504",
+    "fields": {
+      "city": "Toronto",
+      "name": "CN Tower",
+      "detail": "Iconic observation tower with glass floor and SkyPod.",
+      "meta": "Attraction · ★ 4.7",
+      "icon": "🗼",
+      "image": "discovery/154149b329365a53812f401f99aa3504.jpg",
+      "valid_start_date": "2026-07-15",
+      "valid_end_date": "2026-07-19",
+      "lat": 43.6426,
+      "lng": -79.3871,
+      "sort_order": 0,
+      "created_at": "2026-08-03T00:00:00Z",
+      "updated_at": "2026-08-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "discovery.thingtodo",
+    "pk": "3e657ee6-1170-5650-9cc9-5c339445ad8d",
+    "fields": {
+      "city": "Toronto",
+      "name": "Royal Ontario Museum",
+      "detail": "Natural history, world cultures and dinosaur galleries.",
+      "meta": "Museum · ★ 4.7",
+      "icon": "🏛️",
+      "image": "discovery/3e657ee6117056509cc95c339445ad8d.jpg",
+      "valid_start_date": "2026-08-05",
+      "valid_end_date": "2026-08-23",
+      "lat": 43.6677,
+      "lng": -79.3948,
+      "sort_order": 1,
+      "created_at": "2026-08-03T00:00:00Z",
+      "updated_at": "2026-08-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "discovery.thingtodo",
+    "pk": "24e95242-576e-5d27-a208-5f5560de2871",
+    "fields": {
+      "city": "Toronto",
+      "name": "Toronto Islands",
+      "detail": "Ferry ride, beaches, bike trails and skyline views.",
+      "meta": "Park · ★ 4.8",
+      "icon": "⛴️",
+      "image": "discovery/24e95242576e5d27a2085f5560de2871.jpg",
+      "valid_start_date": "2026-07-29",
+      "valid_end_date": "2026-08-09",
+      "lat": 43.6205,
+      "lng": -79.379,
+      "sort_order": 2,
+      "created_at": "2026-08-03T00:00:00Z",
+      "updated_at": "2026-08-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "discovery.thingtodo",
+    "pk": "d4273cb1-a572-5cdb-bb41-1e82d7583e53",
+    "fields": {
+      "city": "Toronto",
+      "name": "St. Lawrence Market",
+      "detail": "Historic market hall with local food and crafts.",
+      "meta": "Market · ★ 4.6",
+      "icon": "🧺",
+      "image": "discovery/d4273cb1a5725cdbbb411e82d7583e53.jpg",
+      "valid_start_date": "2026-07-14",
+      "valid_end_date": "2026-08-29",
+      "lat": 43.6487,
+      "lng": -79.3716,
+      "sort_order": 3,
+      "created_at": "2026-08-03T00:00:00Z",
+      "updated_at": "2026-08-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "discovery.thingtodo",
+    "pk": "9c9b98f6-2f94-517e-a020-deff6ac2bdd5",
+    "fields": {
+      "city": "Toronto",
+      "name": "High Park",
+      "detail": "Trails, gardens, a zoo and cherry blossoms in spring.",
+      "meta": "Park · ★ 4.7",
+      "icon": "🌳",
+      "image": "discovery/9c9b98f62f94517ea020deff6ac2bdd5.jpg",
+      "valid_start_date": "2026-09-08",
+      "valid_end_date": "2026-09-16",
+      "lat": 43.6465,
+      "lng": -79.4637,
+      "sort_order": 4,
+      "created_at": "2026-08-03T00:00:00Z",
+      "updated_at": "2026-08-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "discovery.thingtodo",
+    "pk": "afb4c3ca-6aa7-588a-b263-eeacf6acf3fc",
+    "fields": {
+      "city": "Toronto",
+      "name": "Distillery District",
+      "detail": "Cobblestone arts district with galleries and cafés.",
+      "meta": "Attraction · ★ 4.6",
+      "icon": "🎨",
+      "image": "discovery/afb4c3ca6aa7588ab263eeacf6acf3fc.jpg",
+      "valid_start_date": "2026-09-14",
+      "valid_end_date": "2026-10-14",
+      "lat": 43.6503,
+      "lng": -79.3596,
+      "sort_order": 5,
+      "created_at": "2026-08-03T00:00:00Z",
+      "updated_at": "2026-08-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "discovery.event",
+    "pk": "ae308efb-9b60-596f-beee-6a4239112c34",
+    "fields": {
+      "city": "Toronto",
+      "name": "Toronto Home & Garden Show",
+      "detail": "Enercare Centre · Sat Jul 25, 10 AM",
+      "meta": "Entry $20",
+      "icon": "🏡",
+      "image": "discovery/ae308efb9b60596fbeee6a4239112c34.jpg",
+      "valid_start_date": "2026-07-05",
+      "valid_end_date": "2026-07-09",
+      "lat": 43.6357,
+      "lng": -79.4113,
+      "sort_order": 6,
+      "created_at": "2026-08-03T00:00:00Z",
+      "updated_at": "2026-08-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "discovery.event",
+    "pk": "2181bf48-47a8-562b-a415-9a4fd60f772f",
+    "fields": {
+      "city": "Toronto",
+      "name": "Artisan Skills Fair",
+      "detail": "Exhibition Place · Sun Aug 2, 12 PM",
+      "meta": "Free entry",
+      "icon": "🛠️",
+      "image": "discovery/2181bf4847a8562ba4159a4fd60f772f.jpg",
+      "valid_start_date": "2026-07-12",
+      "valid_end_date": "2026-07-28",
+      "lat": 43.633,
+      "lng": -79.413,
+      "sort_order": 7,
+      "created_at": "2026-08-03T00:00:00Z",
+      "updated_at": "2026-08-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "discovery.event",
+    "pk": "11bac711-9db9-5792-8e2d-4403de690509",
+    "fields": {
+      "city": "Toronto",
+      "name": "Community Cleanup Day",
+      "detail": "Trinity Bellwoods Park · Sat Aug 8, 7 AM",
+      "meta": "Free · volunteers welcome",
+      "icon": "🧹",
+      "image": "discovery/11bac7119db957928e2d4403de690509.jpg",
+      "valid_start_date": "2026-07-30",
+      "valid_end_date": "2026-09-03",
+      "lat": 43.647,
+      "lng": -79.413,
+      "sort_order": 8,
+      "created_at": "2026-08-03T00:00:00Z",
+      "updated_at": "2026-08-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "discovery.event",
+    "pk": "8e4f03fd-40c8-545d-b31c-00da05acf4fd",
+    "fields": {
+      "city": "Toronto",
+      "name": "Solar & Smart-Home Workshop",
+      "detail": "MaRS Centre · Thu Aug 13, 4 PM",
+      "meta": "Entry $15",
+      "icon": "☀️",
+      "image": "discovery/8e4f03fd40c8545db31c00da05acf4fd.jpg",
+      "valid_start_date": "2026-07-04",
+      "valid_end_date": "2026-08-11",
+      "lat": 43.6596,
+      "lng": -79.389,
+      "sort_order": 9,
+      "created_at": "2026-08-03T00:00:00Z",
+      "updated_at": "2026-08-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "discovery.event",
+    "pk": "ad24f637-3bee-5977-93b6-c51a1988d362",
+    "fields": {
+      "city": "Toronto",
+      "name": "Weekend Food & Craft Market",
+      "detail": "Evergreen Brick Works · Every Sat, 9 AM",
+      "meta": "Free entry",
+      "icon": "🍢",
+      "image": "discovery/ad24f6373bee597793b6c51a1988d362.jpg",
+      "valid_start_date": "2026-07-26",
+      "valid_end_date": "2026-09-12",
+      "lat": 43.6845,
+      "lng": -79.3654,
+      "sort_order": 10,
+      "created_at": "2026-08-03T00:00:00Z",
+      "updated_at": "2026-08-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "discovery.promotion",
+    "pk": "d9a012c3-7bbd-5dc7-b825-132639c89b97",
+    "fields": {
+      "city": "Toronto",
+      "name": "20% off deep cleaning",
+      "detail": "Funke's Cleaning Co. — 3-bed homes and larger.",
+      "meta": "Valid until Aug 15",
+      "icon": "🏷️",
+      "image": "discovery/d9a012c37bbd5dc7b825132639c89b97.jpg",
+      "valid_start_date": "2026-09-08",
+      "valid_end_date": "2026-10-07",
+      "lat": 43.646,
+      "lng": -79.4,
+      "sort_order": 11,
+      "created_at": "2026-08-03T00:00:00Z",
+      "updated_at": "2026-08-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "discovery.promotion",
+    "pk": "645ae06e-c833-5b4b-9471-c83203079cc5",
+    "fields": {
+      "city": "Toronto",
+      "name": "Free plumbing inspection",
+      "detail": "Emeka Adewale — before any repair booking.",
+      "meta": "Valid until Aug 31",
+      "icon": "🔧",
+      "image": "discovery/645ae06ec8335b4b9471c83203079cc5.jpg",
+      "valid_start_date": "2026-07-29",
+      "valid_end_date": "2026-08-29",
+      "lat": 43.67,
+      "lng": -79.39,
+      "sort_order": 12,
+      "created_at": "2026-08-03T00:00:00Z",
+      "updated_at": "2026-08-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "discovery.promotion",
+    "pk": "53c4fdc5-1ce1-58b2-bd35-44605a39767e",
+    "fields": {
+      "city": "Toronto",
+      "name": "$1,000 off solar install",
+      "detail": "Tunde Solar — 3kW systems and above.",
+      "meta": "Valid until Sep 1",
+      "icon": "☀️",
+      "image": "discovery/53c4fdc51ce158b2bd3544605a39767e.jpg",
+      "valid_start_date": "2026-09-14",
+      "valid_end_date": "2026-10-04",
+      "lat": 43.7,
+      "lng": -79.42,
+      "sort_order": 13,
+      "created_at": "2026-08-03T00:00:00Z",
+      "updated_at": "2026-08-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "discovery.promotion",
+    "pk": "83ad4535-2949-5cbd-ae1f-d9831d64f0b8",
+    "fields": {
+      "city": "Toronto",
+      "name": "15% off CCTV bundle",
+      "detail": "Ibrahim Secure Homes — 4-camera kits installed.",
+      "meta": "Valid until Aug 20",
+      "icon": "📹",
+      "image": "discovery/83ad453529495cbdae1fd9831d64f0b8.jpg",
+      "valid_start_date": "2026-07-01",
+      "valid_end_date": "2026-08-21",
+      "lat": 43.656,
+      "lng": -79.34,
+      "sort_order": 14,
+      "created_at": "2026-08-03T00:00:00Z",
+      "updated_at": "2026-08-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "discovery.promotion",
+    "pk": "8361b585-1d14-5be4-92c8-2ffafe777343",
+    "fields": {
+      "city": "Toronto",
+      "name": "2-for-1 garden makeover",
+      "detail": "GreenThumb Landscaping — front + back yard.",
+      "meta": "Valid until Aug 10",
+      "icon": "🌿",
+      "image": "discovery/8361b5851d145be492c82ffafe777343.jpg",
+      "valid_start_date": "2026-07-21",
+      "valid_end_date": "2026-09-06",
+      "lat": 43.69,
+      "lng": -79.33,
+      "sort_order": 15,
+      "created_at": "2026-08-03T00:00:00Z",
+      "updated_at": "2026-08-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "discovery.newsitem",
+    "pk": "e32bfdba-e0f2-5172-9944-071a94bb76d8",
+    "fields": {
+      "city": "Toronto",
+      "name": "Gardiner lane closures this weekend",
+      "detail": "Resurfacing between Jarvis St and Cherry St — expect delays downtown.",
+      "meta": "City of Toronto · Jul 19",
+      "icon": "🚧",
+      "image": "discovery/e32bfdbae0f251729944071a94bb76d8.jpg",
+      "valid_start_date": "2026-08-24",
+      "valid_end_date": "2026-09-17",
+      "lat": 43.6446,
+      "lng": -79.3666,
+      "sort_order": 16,
+      "created_at": "2026-08-03T00:00:00Z",
+      "updated_at": "2026-08-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "discovery.newsitem",
+    "pk": "b1d4615e-dace-57eb-8cd1-cdc5323ddacd",
+    "fields": {
+      "city": "Toronto",
+      "name": "New rebate for home solar installs",
+      "detail": "Toronto expands the Home Energy Loan Program to cover battery storage.",
+      "meta": "Energy · Jul 17",
+      "icon": "☀️",
+      "image": "discovery/b1d4615edace57eb8cd1cdc5323ddacd.jpg",
+      "valid_start_date": "2026-08-05",
+      "valid_end_date": "2026-08-17",
+      "lat": 43.6534,
+      "lng": -79.384,
+      "sort_order": 17,
+      "created_at": "2026-08-03T00:00:00Z",
+      "updated_at": "2026-08-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "discovery.newsitem",
+    "pk": "e822df5a-9879-58e6-8410-00b1d119b8da",
+    "fields": {
+      "city": "Toronto",
+      "name": "Waterfront splash pads reopen",
+      "detail": "All 12 lakefront splash pads back in service after maintenance.",
+      "meta": "Parks & Rec · Jul 16",
+      "icon": "⛲",
+      "image": "discovery/e822df5a987958e6841000b1d119b8da.jpg",
+      "valid_start_date": "2026-07-28",
+      "valid_end_date": "2026-09-17",
+      "lat": 43.6387,
+      "lng": -79.3816,
+      "sort_order": 18,
+      "created_at": "2026-08-03T00:00:00Z",
+      "updated_at": "2026-08-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "discovery.newsitem",
+    "pk": "2bcbc425-2aa7-58c5-a643-44b089025914",
+    "fields": {
+      "city": "Toronto",
+      "name": "Leslieville street festival announced",
+      "detail": "Queen St E closes to cars for a weekend market and live music, Aug 22–23.",
+      "meta": "Community · Jul 15",
+      "icon": "🎪",
+      "image": "discovery/2bcbc4252aa758c5a64344b089025914.jpg",
+      "valid_start_date": "2026-08-13",
+      "valid_end_date": "2026-08-22",
+      "lat": 43.6626,
+      "lng": -79.3357,
+      "sort_order": 19,
+      "created_at": "2026-08-03T00:00:00Z",
+      "updated_at": "2026-08-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "discovery.newsitem",
+    "pk": "7edb6771-c406-5230-8fc8-b337c7b3cc9c",
+    "fields": {
+      "city": "Toronto",
+      "name": "Basement flooding subsidy extended",
+      "detail": "Backwater-valve installation subsidy extended to end of year for eligible homes.",
+      "meta": "Housing · Jul 14",
+      "icon": "🏠",
+      "image": "discovery/7edb6771c40652308fc8b337c7b3cc9c.jpg",
+      "valid_start_date": "2026-07-12",
+      "valid_end_date": "2026-08-08",
+      "lat": 43.6899,
+      "lng": -79.4544,
+      "sort_order": 20,
+      "created_at": "2026-08-03T00:00:00Z",
+      "updated_at": "2026-08-03T00:00:00Z"
+    }
+  }
+]

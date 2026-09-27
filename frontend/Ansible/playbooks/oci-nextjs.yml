@@ -1,0 +1,28 @@
+# $ ansible-playbook -i inventories/oci playbooks/oci-nextjs.yml
+---
+- name: Ansible Tasks
+  hosts: nextjs
+  remote_user: ubuntu
+  become: true
+  pre_tasks:
+    - name: Add variables
+      set_fact:
+        ansible_user: ubuntu
+        ansible_hostname: nextjs
+        project_name: nextjs
+        project_directory: nextjs
+        domain_name: nextjs.ottawastem.com
+        email: like.ca@gmail.com
+        git_username: likeca
+        git_repository: nextjs_boilerplate
+        ubuntu_code_name: noble
+        architectures: amd64
+        postgresql_version: 18
+  roles:
+    # - 01-common
+    # - 02-docker
+    # - 03-nginx
+    - 04-postgresql
+    # - 04-postgresql-postgis
+    # - 05-nextjs
+    # - 06-cronjob

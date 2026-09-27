@@ -1,0 +1,45 @@
+- name: PostgreSQL create dba user rentbnbdba
+  shell: sudo -u postgres psql -c "CREATE USER {{ lookup('ini', 'DBA_USER section=DATABASE file=../../local.env') }} WITH PASSWORD '{{ lookup('ini', 'DBA_PASSWORD section=DATABASE file=../../local.env') }}';"
+  register: create_user
+
+- name: PostgreSQL alert dba user to superuser
+  shell: sudo -u postgres psql -c "ALTER ROLE {{ lookup('ini', 'DBA_USER section=DATABASE file=../../local.env') }} WITH SUPERUSER;"
+  register: alert_user
+
+- name: PostgreSQL create database
+  shell: sudo -u postgres psql -c "CREATE DATABASE {{ lookup('ini', 'DB_NAME section=DATABASE file=../../local.env') }} OWNER {{ lookup('ini', 'DBA_USER section=DATABASE file=../../local.env') }};"
+  register: create_db
+
+- name: PostgreSQL create GIS extension for database
+  shell: sudo -u postgres psql {{ lookup('ini', 'DB_NAME section=DATABASE file=../../local.env') }} -c "CREATE EXTENSION postgis;"
+  register: create_gis_extension
+
+
+- name: PostgreSQL show user
+  shell: sudo -u postgres psql -c "\du"
+  register: du
+
+- name: PostgreSQL list databases
+  shell: sudo -u postgres psql -c "\list"
+  register: list
+
+- name: PostgreSQL show version
+  shell: sudo -u postgres psql -c "SELECT version();"
+  register: show_postgresql
+
+- name: PostgreSQL show version
+  shell: sudo -u postgres psql {{ lookup('ini', 'DB_NAME section=DATABASE file=../../local.env') }} -c "SELECT PostGIS_full_version();"
+  register: show_gis
+ 
+
+- name: Debug msg - stdout
+  debug:
+    msg: 
+      - "{{ create_user.stdout_lines }}"
+      - "{{ alert_user.stdout_lines }}"
+      - "{{ create_db.stdout_lines }}"
+      - "{{ create_gis_extension.stdout_lines }}"
+      - "{{ du.stdout_lines }}"
+      - "{{ list.stdout_lines }}"
+      - "{{ show_postgresql.stdout_lines }}"
+      - "{{ show_gis.stdout_lines }}"

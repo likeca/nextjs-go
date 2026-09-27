@@ -1,0 +1,2235 @@
+basePath: /
+definitions:
+  accounts.CreateUserInput:
+    properties:
+      email:
+        type: string
+      emailVerified:
+        type: boolean
+      isAdmin:
+        type: boolean
+      name:
+        type: string
+      password:
+        type: string
+      phone:
+        type: string
+      roleId:
+        type: string
+    type: object
+  accounts.Permission:
+    properties:
+      action:
+        type: string
+      createdAt:
+        type: string
+      description:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      resource:
+        type: string
+      updatedAt:
+        type: string
+    type: object
+  accounts.PermissionInput:
+    properties:
+      action:
+        type: string
+      description:
+        type: string
+      name:
+        type: string
+      resource:
+        type: string
+    type: object
+  accounts.PermissionPair:
+    properties:
+      action:
+        type: string
+      resource:
+        type: string
+    type: object
+  accounts.PermissionSummary:
+    properties:
+      isAdmin:
+        type: boolean
+      isAuthenticated:
+        type: boolean
+      isSuperuser:
+        type: boolean
+      permissions:
+        items:
+          $ref: '#/definitions/accounts.PermissionPair'
+        type: array
+      roleName:
+        type: string
+    type: object
+  accounts.Role:
+    properties:
+      createdAt:
+        type: string
+      description:
+        type: string
+      id:
+        type: string
+      isSystem:
+        type: boolean
+      name:
+        type: string
+      permissions:
+        items:
+          $ref: '#/definitions/accounts.Permission'
+        type: array
+      rolePermissions:
+        items:
+          $ref: '#/definitions/accounts.RolePermissionRef'
+        type: array
+      updatedAt:
+        type: string
+    type: object
+  accounts.RoleInput:
+    properties:
+      description:
+        type: string
+      name:
+        type: string
+      permissionIds:
+        items:
+          type: string
+        type: array
+      syncPermission:
+        type: boolean
+    type: object
+  accounts.RolePermissionRef:
+    properties:
+      permission:
+        $ref: '#/definitions/accounts.Permission'
+    type: object
+  accounts.RoleSummary:
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+    type: object
+  accounts.UpdateUserInput:
+    properties:
+      email:
+        type: string
+      emailVerified:
+        type: boolean
+      image:
+        type: string
+      imageSet:
+        type: boolean
+      isAdmin:
+        type: boolean
+      name:
+        type: string
+      password:
+        type: string
+      phone:
+        type: string
+      phoneSet:
+        type: boolean
+      roleID:
+        type: string
+      roleSet:
+        type: boolean
+    type: object
+  accounts.User:
+    properties:
+      createdAt:
+        type: string
+      email:
+        type: string
+      emailVerified:
+        type: boolean
+      id:
+        type: string
+      image:
+        type: string
+      isAdmin:
+        type: boolean
+      name:
+        type: string
+      phone:
+        type: string
+      role:
+        $ref: '#/definitions/accounts.RoleSummary'
+      roleId:
+        type: string
+      stripeCustomerId:
+        type: string
+      twoFactorEnabled:
+        type: boolean
+      updatedAt:
+        type: string
+    type: object
+  billing.Payment:
+    properties:
+      amount:
+        type: integer
+      createdAt:
+        type: string
+      currency:
+        type: string
+      description:
+        type: string
+      id:
+        type: string
+      status:
+        type: string
+      stripePaymentId:
+        type: string
+    type: object
+  billing.Plan:
+    properties:
+      amount:
+        type: integer
+      createdAt:
+        type: string
+      currency:
+        type: string
+      description:
+        type: string
+      features:
+        items:
+          type: string
+        type: array
+      id:
+        type: string
+      interval:
+        type: string
+      isActive:
+        type: boolean
+      isPopular:
+        type: boolean
+      name:
+        type: string
+      stripePriceId:
+        type: string
+      stripeProductId:
+        type: string
+      updatedAt:
+        type: string
+    type: object
+  billing.Subscription:
+    properties:
+      cancelAtPeriodEnd:
+        type: boolean
+      createdAt:
+        type: string
+      currentPeriodEnd:
+        type: string
+      currentPeriodStart:
+        type: string
+      id:
+        type: string
+      plan:
+        $ref: '#/definitions/billing.Plan'
+      planId:
+        type: string
+      status:
+        type: string
+      stripeCustomerId:
+        type: string
+      stripeSubscriptionId:
+        type: string
+      updatedAt:
+        type: string
+      userId:
+        type: string
+    type: object
+  discovery.Item:
+    properties:
+      city:
+        type: string
+      detail:
+        type: string
+      icon:
+        type: string
+      id:
+        type: string
+      imageUrl:
+        type: string
+      lat:
+        type: number
+      lng:
+        type: number
+      meta:
+        type: string
+      name:
+        type: string
+      type:
+        type: string
+      validEndDate:
+        type: string
+      validStartDate:
+        type: string
+    type: object
+  httpx.Error:
+    properties:
+      detail:
+        type: string
+    type: object
+  marketplace.Application:
+    properties:
+      id:
+        type: string
+      jobId:
+        type: string
+      message:
+        type: string
+      price:
+        type: integer
+      provider:
+        $ref: '#/definitions/marketplace.Provider'
+    type: object
+  marketplace.Category:
+    properties:
+      icon:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      sub:
+        type: string
+    type: object
+  marketplace.Job:
+    properties:
+      applicants:
+        type: integer
+      area:
+        type: string
+      budget:
+        type: integer
+      category:
+        type: string
+      description:
+        type: string
+      id:
+        type: string
+      note:
+        type: string
+      provider:
+        description: provider.name, null when unassigned
+        type: string
+      status:
+        type: string
+      title:
+        type: string
+    type: object
+  marketplace.JobInput:
+    properties:
+      area:
+        type: string
+      budget:
+        type: integer
+      category:
+        type: string
+      description:
+        type: string
+      title:
+        type: string
+    type: object
+  marketplace.Provider:
+    properties:
+      about:
+        type: string
+      city:
+        type: string
+      color:
+        type: string
+      distanceKm:
+        type: integer
+      from:
+        type: integer
+      id:
+        description: provider slug, used in /providers/[id] routes
+        type: string
+      initials:
+        type: string
+      jobs:
+        type: integer
+      lat:
+        type: number
+      lng:
+        type: number
+      name:
+        type: string
+      rating:
+        type: number
+      reviews:
+        items:
+          $ref: '#/definitions/marketplace.Review'
+        type: array
+      trade:
+        type: string
+      verified:
+        type: boolean
+      years:
+        type: integer
+    type: object
+  marketplace.Review:
+    properties:
+      name:
+        type: string
+      stars:
+        type: integer
+      text:
+        type: string
+    type: object
+  marketplace.Thread:
+    properties:
+      color:
+        type: string
+      id:
+        type: string
+      initials:
+        type: string
+      messages:
+        items:
+          $ref: '#/definitions/marketplace.ThreadMessage'
+        type: array
+      name:
+        type: string
+      preview:
+        type: string
+      time:
+        type: string
+      unread:
+        type: integer
+    type: object
+  marketplace.ThreadMessage:
+    properties:
+      me:
+        type: boolean
+      text:
+        type: string
+      time:
+        type: string
+    type: object
+  marketplace.Transaction:
+    properties:
+      amount:
+        type: integer
+      date:
+        type: string
+      id:
+        type: string
+      label:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: LHCHub home-services marketplace API (Go backend). Clients post jobs,
+    vetted providers apply, and payment is held in escrow.
+  termsOfService: http://swagger.io/terms/
+  title: LHCHub API
+  version: "1.0"
+paths:
+  /api/auth/2fa/disable/:
+    post:
+      consumes:
+      - application/json
+      description: Disables 2FA for the current user.
+      parameters:
+      - description: '{password}'
+        in: body
+        name: body
+        required: true
+        schema:
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      security:
+      - BearerAuth: []
+      summary: Disable 2FA
+      tags:
+      - auth
+  /api/auth/2fa/enable/:
+    post:
+      consumes:
+      - application/json
+      description: Generates a TOTP secret and backup codes for the current user.
+      parameters:
+      - description: '{password}'
+        in: body
+        name: body
+        required: true
+        schema:
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      security:
+      - BearerAuth: []
+      summary: Enable 2FA
+      tags:
+      - auth
+  /api/auth/2fa/login-verify/:
+    post:
+      consumes:
+      - application/json
+      description: Verifies a TOTP or backup code against a preAuthToken and issues
+        JWT tokens.
+      parameters:
+      - description: '{preAuthToken, code}'
+        in: body
+        name: body
+        required: true
+        schema:
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      summary: Complete 2FA login
+      tags:
+      - auth
+  /api/auth/2fa/verify/:
+    post:
+      consumes:
+      - application/json
+      description: Confirms a TOTP code and activates 2FA for the current user.
+      parameters:
+      - description: '{code}'
+        in: body
+        name: body
+        required: true
+        schema:
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      security:
+      - BearerAuth: []
+      summary: Verify 2FA
+      tags:
+      - auth
+  /api/auth/google/:
+    post:
+      consumes:
+      - application/json
+      description: Exchanges a Google authorization code for tokens, links/finds the
+        account by email, and returns a JWT pair.
+      parameters:
+      - description: '{code}'
+        in: body
+        name: body
+        required: true
+        schema:
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      summary: Google sign-in
+      tags:
+      - auth
+  /api/auth/login/:
+    post:
+      consumes:
+      - application/json
+      description: Authenticates with email + password. Users with 2FA enabled receive
+        a preAuthToken instead of tokens.
+      parameters:
+      - description: '{email, password}'
+        in: body
+        name: body
+        required: true
+        schema:
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      summary: Log in
+      tags:
+      - auth
+  /api/auth/logout/:
+    post:
+      description: Stateless under JWT; always succeeds.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+      summary: Log out
+      tags:
+      - auth
+  /api/auth/otp/send/:
+    post:
+      consumes:
+      - application/json
+      description: Emails a one-time code for verification.
+      parameters:
+      - description: '{email, type}'
+        in: body
+        name: body
+        required: true
+        schema:
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      summary: Send email OTP
+      tags:
+      - auth
+  /api/auth/otp/verify/:
+    post:
+      consumes:
+      - application/json
+      description: Verifies a one-time code sent by email.
+      parameters:
+      - description: '{email, otp, type}'
+        in: body
+        name: body
+        required: true
+        schema:
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      summary: Verify email OTP
+      tags:
+      - auth
+  /api/auth/password/change/:
+    post:
+      consumes:
+      - application/json
+      description: Changes the current user's password.
+      parameters:
+      - description: '{old_password, new_password1, new_password2}'
+        in: body
+        name: body
+        required: true
+        schema:
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      security:
+      - BearerAuth: []
+      summary: Change password
+      tags:
+      - auth
+  /api/auth/password/reset/:
+    post:
+      consumes:
+      - application/json
+      description: Emails a password-reset link. Always returns success to avoid leaking
+        registered emails.
+      parameters:
+      - description: '{email}'
+        in: body
+        name: body
+        required: true
+        schema:
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      summary: Request password reset
+      tags:
+      - auth
+  /api/auth/password/reset/confirm/:
+    post:
+      consumes:
+      - application/json
+      description: Resets the password using a uid + token from the reset email.
+      parameters:
+      - description: '{uid, token, new_password1, new_password2}'
+        in: body
+        name: body
+        required: true
+        schema:
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      summary: Confirm password reset
+      tags:
+      - auth
+  /api/auth/registration/:
+    post:
+      consumes:
+      - application/json
+      description: Creates a new account and returns JWT tokens.
+      parameters:
+      - description: '{email, name, password1, password2}'
+        in: body
+        name: body
+        required: true
+        schema:
+          type: object
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      summary: Register
+      tags:
+      - auth
+  /api/auth/token/refresh/:
+    post:
+      consumes:
+      - application/json
+      description: Exchanges a refresh token for a new access/refresh pair.
+      parameters:
+      - description: '{refresh}'
+        in: body
+        name: body
+        required: true
+        schema:
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      summary: Refresh access token
+      tags:
+      - auth
+  /api/auth/token/verify/:
+    post:
+      consumes:
+      - application/json
+      description: Checks that an access token is valid.
+      parameters:
+      - description: '{token}'
+        in: body
+        name: body
+        required: true
+        schema:
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      summary: Verify access token
+      tags:
+      - auth
+  /api/auth/user/:
+    get:
+      description: Returns the authenticated user (also served at GET /api/users/me/).
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/accounts.User'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      security:
+      - BearerAuth: []
+      summary: Get current user
+      tags:
+      - auth
+    patch:
+      consumes:
+      - application/json
+      description: Updates the authenticated user's own profile (name/phone/image).
+      parameters:
+      - description: Fields to update
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/accounts.UpdateUserInput'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/accounts.User'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      security:
+      - BearerAuth: []
+      summary: Update current user
+      tags:
+      - auth
+  /api/billing/cancel/:
+    post:
+      consumes:
+      - application/json
+      description: Schedules the current subscription to cancel at period end.
+      parameters:
+      - description: '{subscriptionId}'
+        in: body
+        name: body
+        required: true
+        schema:
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "404":
+          description: Not Found
+          schema:
+            type: object
+        "502":
+          description: Bad Gateway
+          schema:
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Cancel subscription
+      tags:
+      - billing
+  /api/billing/checkout/:
+    post:
+      consumes:
+      - application/json
+      description: Creates a Stripe Checkout session for a plan and returns its URL.
+      parameters:
+      - description: '{planId}'
+        in: body
+        name: body
+        required: true
+        schema:
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "502":
+          description: Bad Gateway
+          schema:
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Create checkout session
+      tags:
+      - billing
+  /api/billing/payments/:
+    get:
+      description: Returns the current user's payments.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/billing.Payment'
+            type: array
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      security:
+      - BearerAuth: []
+      summary: List payments
+      tags:
+      - billing
+  /api/billing/plans/:
+    get:
+      description: Returns active billing plans ordered by amount.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/billing.Plan'
+            type: array
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      summary: List plans
+      tags:
+      - billing
+  /api/billing/portal/:
+    post:
+      consumes:
+      - application/json
+      description: Creates a Stripe Billing Portal session and returns its URL.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "502":
+          description: Bad Gateway
+          schema:
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Create billing portal session
+      tags:
+      - billing
+  /api/billing/resume/:
+    post:
+      consumes:
+      - application/json
+      description: Resumes a subscription scheduled to cancel.
+      parameters:
+      - description: '{subscriptionId}'
+        in: body
+        name: body
+        required: true
+        schema:
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "404":
+          description: Not Found
+          schema:
+            type: object
+        "502":
+          description: Bad Gateway
+          schema:
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Resume subscription
+      tags:
+      - billing
+  /api/billing/subscriptions/:
+    get:
+      description: Returns the current user's subscriptions.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/billing.Subscription'
+            type: array
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      security:
+      - BearerAuth: []
+      summary: List subscriptions
+      tags:
+      - billing
+  /api/billing/subscriptions/current/:
+    get:
+      description: Returns the current user's active subscription (or null).
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      security:
+      - BearerAuth: []
+      summary: Current subscription
+      tags:
+      - billing
+  /api/billing/verify-session/:
+    get:
+      description: Verifies a Stripe Checkout session and syncs subscription/payment
+        rows.
+      parameters:
+      - description: Stripe Checkout session id
+        in: query
+        name: session_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "502":
+          description: Bad Gateway
+          schema:
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Verify checkout session
+      tags:
+      - billing
+  /api/billing/webhook/:
+    post:
+      consumes:
+      - application/json
+      description: Receives Stripe events and syncs subscription/payment rows.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      summary: Stripe webhook
+      tags:
+      - billing
+  /api/dashboard/stats/:
+    get:
+      description: Returns admin dashboard aggregates (total users, active subscriptions,
+        revenue, recent users).
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      security:
+      - BearerAuth: []
+      summary: Dashboard stats
+      tags:
+      - dashboard
+  /api/discovery/items/:
+    get:
+      description: Returns Local Discovery POIs filtered by city and type.
+      parameters:
+      - description: City slug to filter by
+        in: query
+        name: city
+        type: string
+      - description: 'POI type: things_to_do|events|promos|news'
+        in: query
+        name: type
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/discovery.Item'
+            type: array
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      summary: List discovery items
+      tags:
+      - discovery
+  /api/marketplace/applications/:
+    get:
+      description: Returns job applications, optionally filtered by job id.
+      parameters:
+      - description: Job id filter
+        in: query
+        name: jobId
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/marketplace.Application'
+            type: array
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      summary: List applications
+      tags:
+      - marketplace
+  /api/marketplace/categories/:
+    get:
+      description: Returns all marketplace job categories.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/marketplace.Category'
+            type: array
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      summary: List categories
+      tags:
+      - marketplace
+  /api/marketplace/jobs/:
+    get:
+      description: Returns jobs, optionally filtered by status and category.
+      parameters:
+      - description: Job status filter
+        in: query
+        name: status
+        type: string
+      - description: Category filter
+        in: query
+        name: category
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/marketplace.Job'
+            type: array
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      summary: List jobs
+      tags:
+      - marketplace
+    post:
+      consumes:
+      - application/json
+      description: Posts a new job. Requires authentication.
+      parameters:
+      - description: Job to create
+        in: body
+        name: job
+        required: true
+        schema:
+          $ref: '#/definitions/marketplace.JobInput'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/marketplace.Job'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      security:
+      - BearerAuth: []
+      summary: Create a job
+      tags:
+      - marketplace
+  /api/marketplace/jobs/{id}/:
+    get:
+      description: Returns a single job by id.
+      parameters:
+      - description: Job id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/marketplace.Job'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      summary: Get a job
+      tags:
+      - marketplace
+  /api/marketplace/providers/:
+    get:
+      description: Returns providers, optionally filtered by city, trade, verified
+        status, and max price.
+      parameters:
+      - description: City filter
+        in: query
+        name: city
+        type: string
+      - description: Trade/category filter
+        in: query
+        name: trade
+        type: string
+      - description: Set to true to show only verified providers
+        in: query
+        name: verified
+        type: string
+      - description: Maximum price filter
+        in: query
+        name: maxPrice
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/marketplace.Provider'
+            type: array
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      summary: List providers
+      tags:
+      - marketplace
+  /api/marketplace/providers/{slug}/:
+    get:
+      description: Returns a single provider by slug.
+      parameters:
+      - description: Provider slug
+        in: path
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/marketplace.Provider'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      summary: Get a provider
+      tags:
+      - marketplace
+  /api/marketplace/threads/:
+    get:
+      description: Returns the user's message threads.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/marketplace.Thread'
+            type: array
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      summary: List message threads
+      tags:
+      - marketplace
+  /api/marketplace/transactions/:
+    get:
+      description: Returns the user's wallet transactions.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/marketplace.Transaction'
+            type: array
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      summary: List wallet transactions
+      tags:
+      - marketplace
+  /api/permissions/:
+    get:
+      description: Returns all permissions (admin).
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/accounts.Permission'
+            type: array
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      security:
+      - BearerAuth: []
+      summary: List permissions
+      tags:
+      - permissions
+    post:
+      consumes:
+      - application/json
+      description: Creates a new permission (admin).
+      parameters:
+      - description: Permission to create
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/accounts.PermissionInput'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/accounts.Permission'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      security:
+      - BearerAuth: []
+      summary: Create a permission
+      tags:
+      - permissions
+  /api/permissions/{id}/:
+    delete:
+      description: Deletes a permission by id (admin). Assigned permissions are rejected.
+      parameters:
+      - description: Permission id
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "204":
+          description: No Content
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      security:
+      - BearerAuth: []
+      summary: Delete a permission
+      tags:
+      - permissions
+    get:
+      description: Returns a single permission by id (admin).
+      parameters:
+      - description: Permission id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/accounts.Permission'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      security:
+      - BearerAuth: []
+      summary: Get a permission
+      tags:
+      - permissions
+    patch:
+      consumes:
+      - application/json
+      description: Updates a permission by id (admin).
+      parameters:
+      - description: Permission id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Fields to update
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/accounts.PermissionInput'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/accounts.Permission'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      security:
+      - BearerAuth: []
+      summary: Update a permission
+      tags:
+      - permissions
+  /api/roles/:
+    get:
+      description: Returns all roles (admin).
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/accounts.Role'
+            type: array
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      security:
+      - BearerAuth: []
+      summary: List roles
+      tags:
+      - roles
+    post:
+      consumes:
+      - application/json
+      description: Creates a new role (admin).
+      parameters:
+      - description: Role to create
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/accounts.RoleInput'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/accounts.Role'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      security:
+      - BearerAuth: []
+      summary: Create a role
+      tags:
+      - roles
+  /api/roles/{id}/:
+    delete:
+      description: Deletes a role by id (admin). System roles and assigned roles are
+        rejected.
+      parameters:
+      - description: Role id
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "204":
+          description: No Content
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      security:
+      - BearerAuth: []
+      summary: Delete a role
+      tags:
+      - roles
+    get:
+      description: Returns a single role by id (admin).
+      parameters:
+      - description: Role id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/accounts.Role'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      security:
+      - BearerAuth: []
+      summary: Get a role
+      tags:
+      - roles
+    patch:
+      consumes:
+      - application/json
+      description: Updates a role by id (admin).
+      parameters:
+      - description: Role id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Fields to update
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/accounts.RoleInput'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/accounts.Role'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      security:
+      - BearerAuth: []
+      summary: Update a role
+      tags:
+      - roles
+  /api/user/email-change/:
+    post:
+      consumes:
+      - application/json
+      description: Emails a verification link to the new address.
+      parameters:
+      - description: '{newEmail}'
+        in: body
+        name: body
+        required: true
+        schema:
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      security:
+      - BearerAuth: []
+      summary: Request email change
+      tags:
+      - auth
+  /api/user/email-change/confirm/:
+    post:
+      consumes:
+      - application/json
+      description: Applies a pending email change using the emailed token.
+      parameters:
+      - description: '{token}'
+        in: body
+        name: body
+        required: true
+        schema:
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      security:
+      - BearerAuth: []
+      summary: Confirm email change
+      tags:
+      - auth
+  /api/users/:
+    get:
+      description: Returns a paginated list of users (admin).
+      parameters:
+      - description: Page number
+        in: query
+        name: page
+        type: integer
+      - description: Search term
+        in: query
+        name: search
+        type: string
+      - description: Filter by email verification
+        in: query
+        name: emailVerified
+        type: string
+      - description: Filter by admin status
+        in: query
+        name: isAdmin
+        type: string
+      - description: Filter by role
+        in: query
+        name: role
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      security:
+      - BearerAuth: []
+      summary: List users
+      tags:
+      - users
+    post:
+      consumes:
+      - application/json
+      description: Creates a new user (admin).
+      parameters:
+      - description: User to create
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/accounts.CreateUserInput'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/accounts.User'
+        "400":
+          description: Bad Request
+          schema:
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      security:
+      - BearerAuth: []
+      summary: Create a user
+      tags:
+      - users
+  /api/users/{id}/:
+    delete:
+      description: Deletes a user by id (admin).
+      parameters:
+      - description: User id
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "204":
+          description: No Content
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      security:
+      - BearerAuth: []
+      summary: Delete a user
+      tags:
+      - users
+    get:
+      description: Returns a single user by id (admin/self only).
+      parameters:
+      - description: User id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/accounts.User'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      security:
+      - BearerAuth: []
+      summary: Get a user
+      tags:
+      - users
+    patch:
+      consumes:
+      - application/json
+      description: Updates a user by id (admin).
+      parameters:
+      - description: User id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Fields to update
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/accounts.UpdateUserInput'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/accounts.User'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      security:
+      - BearerAuth: []
+      summary: Update a user
+      tags:
+      - users
+  /api/users/permissions/:
+    get:
+      description: Returns the authenticated user's effective permission summary.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/accounts.PermissionSummary'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httpx.Error'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httpx.Error'
+      security:
+      - BearerAuth: []
+      summary: Get my permissions
+      tags:
+      - users
+  /healthz:
+    get:
+      description: Returns ok when the server is up.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+      summary: Health check
+      tags:
+      - system
+schemes:
+- http
+securityDefinitions:
+  BearerAuth:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

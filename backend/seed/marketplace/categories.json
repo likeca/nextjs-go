@@ -1,0 +1,122 @@
+[
+  {
+    "model": "marketplace.category",
+    "pk": "0e6a6b2d-d802-5400-827c-49ec647fdad0",
+    "fields": {
+      "icon": "🔧",
+      "name": "Home Repair & Maintenance",
+      "sub": "Plumbing · Electrical · AC Repair · Generators · Appliances · Carpentry · Masonry · Roofing · Pest Control",
+      "sort_order": 0
+    }
+  },
+  {
+    "model": "marketplace.category",
+    "pk": "6856df20-02c1-5982-9e63-f3e0143180c8",
+    "fields": {
+      "icon": "🧹",
+      "name": "Cleaning & Sanitation",
+      "sub": "House · Post-construction · Office · Sofa/Rug · Tank & Gutter · Waste Disposal",
+      "sort_order": 1
+    }
+  },
+  {
+    "model": "marketplace.category",
+    "pk": "383070d5-35aa-5dac-8996-30c484c10069",
+    "fields": {
+      "icon": "🌿",
+      "name": "Outdoor & Garden",
+      "sub": "Landscaping · Lawn Mowing · Fencing · Tree Cutting · Irrigation",
+      "sort_order": 2
+    }
+  },
+  {
+    "model": "marketplace.category",
+    "pk": "5800972b-ed16-573a-ba48-f5870121a152",
+    "fields": {
+      "icon": "🎨",
+      "name": "Home Improvement & Decor",
+      "sub": "Painting · POP Ceiling · Wallpaper · Blinds & Curtains · Interior Decor · Smart Home",
+      "sort_order": 3
+    }
+  },
+  {
+    "model": "marketplace.category",
+    "pk": "a73576bc-e35f-5a79-ad15-003dbdf641e3",
+    "fields": {
+      "icon": "🏗️",
+      "name": "Construction & Renovation",
+      "sub": "Building · Site Clearing · Renovation · Civil Engineering · QS · Supervision",
+      "sort_order": 4
+    }
+  },
+  {
+    "model": "marketplace.category",
+    "pk": "91565536-1cb0-5812-88cc-9b4feff7ee12",
+    "fields": {
+      "icon": "📹",
+      "name": "Security Systems",
+      "sub": "CCTV · Smart Doorbells · Electric Fencing · Guards · Intercom & Alarms",
+      "sort_order": 5
+    }
+  },
+  {
+    "model": "marketplace.category",
+    "pk": "a0187676-032a-522d-8edc-2f84d4594509",
+    "fields": {
+      "icon": "☀️",
+      "name": "Digital & Electrical Systems",
+      "sub": "Solar · Inverters · Networking · TV Mounting · Home Theatre",
+      "sort_order": 6
+    }
+  },
+  {
+    "model": "marketplace.category",
+    "pk": "84f78471-9fb7-5b3c-b733-449e164756e4",
+    "fields": {
+      "icon": "🚚",
+      "name": "Logistics & Haulage",
+      "sub": "Home Moving · Couriers · Truck Rentals · Materials Delivery",
+      "sort_order": 7
+    }
+  },
+  {
+    "model": "marketplace.category",
+    "pk": "20095be1-8fe0-59c7-91f3-2c221a4b6214",
+    "fields": {
+      "icon": "⚒️",
+      "name": "Specialty Trades",
+      "sub": "Welding · Aluminum Works · Borehole Drilling · Elevators · Upholstery",
+      "sort_order": 8
+    }
+  },
+  {
+    "model": "marketplace.category",
+    "pk": "14f9f390-7461-50cb-8d62-15618dbe3ae2",
+    "fields": {
+      "icon": "🧵",
+      "name": "Artisan Services",
+      "sub": "Tailoring · Shoe Making · Bead Making · Leather Works",
+      "sort_order": 9
+    }
+  },
+  {
+    "model": "marketplace.category",
+    "pk": "564db7e5-b171-50b4-8b21-56975b70d006",
+    "fields": {
+      "icon": "📚",
+      "name": "Education & Tutoring",
+      "sub": "Home Tutors · Language Teachers · Skill Coaching",
+      "sort_order": 10
+    }
+  },
+  {
+    "model": "marketplace.category",
+    "pk": "891a3934-ba78-5f72-b9fe-0f2924bea61e",
+    "fields": {
+      "icon": "🎪",
+      "name": "Event & Rentals",
+      "sub": "Tents & Canopy · Chair/Table Rental · DJ & Sound · Decoration",
+      "sort_order": 11
+    }
+  }
+]

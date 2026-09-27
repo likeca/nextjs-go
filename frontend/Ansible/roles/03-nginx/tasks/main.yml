@@ -1,0 +1,80 @@
+# Install Nginx
+- name: Create keyrings directory
+  ansible.builtin.file:
+    path: /etc/apt/keyrings
+    state: directory
+    mode: '0755'
+
+- name: Add nginx APT signing key
+  ansible.builtin.get_url:
+    url: https://nginx.org/keys/nginx_signing.key
+    dest: /etc/apt/keyrings/nginx.asc
+    mode: '0644'
+    force: true
+
+- name: Add Nginx deb to /etc/apt/sources.list repository
+  ansible.builtin.apt_repository:
+    repo: 'deb [signed-by=/etc/apt/keyrings/nginx.asc] https://nginx.org/packages/ubuntu/ {{ ubuntu_code_name}} nginx'
+    filename: nginx
+    state: present
+
+- name: Add Nginx deb-src to /etc/apt/sources.list repository
+  ansible.builtin.apt_repository:
+    repo: 'deb-src [signed-by=/etc/apt/keyrings/nginx.asc] https://nginx.org/packages/ubuntu/ {{ ubuntu_code_name}} nginx'
+    filename: nginx
+    state: present
+
+- name: APT Update
+  ansible.builtin.apt:
+    update_cache: yes
+    upgrade: dist
+
+- name: Install latest version nginx
+  ansible.builtin.apt:
+    name: nginx
+    state: latest
+    update_cache: yes
+
+- name: Copy nginx.conf file to {{ ansible_hostname }} /etc/ngnix/nginx.conf
+  ansible.builtin.template:
+    src: nginx.conf
+    dest: '/etc/nginx/nginx.conf'
+
+- name: Start nginx
+  ansible.builtin.service:
+    name: nginx
+    enabled: yes
+    state: reloaded
+
+# UFW Configuration, Need to reboot the server after this step
+- name: Install UFW firewall
+  ansible.builtin.apt:
+    name: ufw
+    state: latest
+    update_cache: yes
+
+- name: Enable UFW
+  community.general.ufw:
+    state: enabled
+    policy: allow
+
+- name: Allow all access to tcp port 80
+  community.general.ufw:
+    rule: allow
+    port: '80'
+    proto: tcp
+
+- name: Allow all access to tcp port 443
+  community.general.ufw:
+    rule: allow
+    port: '443'
+    proto: tcp
+
+# Clean up
+- name: Remove useless packages from the cache
+  ansible.builtin.apt:
+    autoclean: yes
+
+- name: Remove dependencies that are no longer required
+  ansible.builtin.apt:
+    autoremove: yes

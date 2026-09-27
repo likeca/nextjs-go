@@ -1,0 +1,58 @@
+# Install Docker Engine (https://docs.docker.com/engine/install/ubuntu/)
+- name: Install prerequisite packages
+  ansible.builtin.apt:
+    pkg:
+      - ca-certificates
+      - curl
+    state: present
+    update_cache: true
+
+- name: Create keyrings directory
+  ansible.builtin.file:
+    path: /etc/apt/keyrings
+    state: directory
+    mode: '0755'
+
+- name: Add Docker APT signing key
+  ansible.builtin.get_url:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    dest: /etc/apt/keyrings/docker.asc
+    mode: '0644'
+    force: true
+
+- name: Copy docker.sources file to {{ ansible_hostname }} /etc/apt/sources.list.d/
+  ansible.builtin.template:
+    src: docker.sources
+    dest: /etc/apt/sources.list.d/docker.sources
+
+- name: Install Docker Engine packages
+  ansible.builtin.apt:
+    pkg:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+      # - docker-buildx-plugin
+      # - docker-compose-plugin
+    state: present
+    update_cache: true
+
+- name: Add {{ ansible_user }} to the docker group
+  ansible.builtin.user:
+    name: '{{ ansible_user }}'
+    groups: docker
+    append: true
+
+- name: Start Docker
+  ansible.builtin.service:
+    name: docker
+    enabled: true
+    state: started
+
+# Clean up
+- name: Remove useless packages from the cache
+  ansible.builtin.apt:
+    autoclean: true
+
+- name: Remove dependencies that are no longer required
+  ansible.builtin.apt:
+    autoremove: true

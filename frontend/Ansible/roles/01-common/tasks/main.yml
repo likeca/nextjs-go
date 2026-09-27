@@ -1,0 +1,83 @@
+- name: APT update & upgrade
+  ansible.builtin.apt:
+    update_cache: true
+    upgrade: dist
+
+- name: Install apt packages
+  ansible.builtin.apt:
+    name: '{{ packages }}'
+  vars:
+    packages:
+      - ca-certificates
+      - curl
+      - gnupg2
+      - lsb-release
+      - net-tools
+      - ubuntu-keyring
+      - vim
+      - zip
+
+- name: Set America/Toronto Local Timezone
+  community.general.timezone:
+    name: America/Toronto
+
+- name: Copy hostname file to {{ ansible_hostname }} /etc/hostname
+  ansible.builtin.template:
+    src: hostname
+    dest: /etc/hostname
+
+- name: Copy .profile file to {{ ansible_hostname }} /home/{{ ansible_user }}/.profile
+  become_user: '{{ ansible_user }}'
+  ansible.builtin.copy:
+    src: 'files/.profile'
+    dest: '/home/{{ ansible_user }}/.profile'
+
+- name: Copy hosts file to {{ ansible_hostname }} /etc/hosts
+  ansible.builtin.template:
+    src: hosts
+    dest: /etc/hosts
+
+- name: Copy authorized_keys file to {{ ansible_hostname }} /home/{{ ansible_user }}/.ssh/authorized_keys
+  ansible.builtin.copy:
+    src: 'files/authorized_keys'
+    dest: '/home/{{ ansible_user }}/.ssh/authorized_keys'
+    owner: '{{ ansible_user }}'
+    group: '{{ ansible_user }}'
+    mode: 0600
+
+# # Upload id_rsa for Github
+# - name: Copy id_rsa file to {{ ansible_hostname }} /home/{{ ansible_user }}/.ssh/id_rsa
+#   copy:
+#     src: "files/id_rsa"
+#     dest: "/home/{{ ansible_user }}/.ssh/id_rsa"
+#     owner: "{{ ansible_user }}"
+#     group: "{{ ansible_user }}"
+#     mode: 0400
+
+# - name: Copy id_rsa.pub file to {{ ansible_hostname }} /home/{{ ansible_user }}/.ssh/id_rsa.pub
+#   copy:
+#     src: "files/id_rsa.pub"
+#     dest: "/home/{{ ansible_user }}/.ssh/id_rsa.pub"
+#     owner: "{{ ansible_user }}"
+#     group: "{{ ansible_user }}"
+#     mode: 0444
+
+# # Disable update /etc/hosts
+# - name: Copy cloud.cfg file to {{ ansible_hostname }} /etc/cloud/cloud.cfg
+#   copy:
+#     src: "files/cloud.cfg"
+#     dest: "/etc/cloud/cloud.cfg"
+
+- name: Remove useless packages from the cache
+  ansible.builtin.apt:
+    autoclean: true
+
+- name: Remove dependencies that are no longer required
+  ansible.builtin.apt:
+    autoremove: true
+
+- name: Remove root user password
+  ansible.builtin.shell: passwd -d root
+
+- name: Remove {{ ansible_user }} user password
+  ansible.builtin.shell: passwd -d {{ ansible_user }}

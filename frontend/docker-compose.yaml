@@ -1,0 +1,12 @@
+# docker run -it -p 3000:3000 nextjs:latest --env-file .env
+# docker compose up -d
+services:
+  nextjs:
+    image: likeca/nextjs
+    container_name: nextjs
+    build:
+      context: .
+    ports:
+      - '3000:3000'
+    env_file:
+      - .env

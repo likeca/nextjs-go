@@ -1,0 +1,6 @@
+Types: deb
+URIs: https://download.docker.com/linux/ubuntu
+Suites: {{ ubuntu_code_name }}
+Components: stable
+Architectures: {{ architectures }}
+Signed-By: /etc/apt/keyrings/docker.asc

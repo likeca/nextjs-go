@@ -1,0 +1,432 @@
+[
+  {
+    "model": "marketplace.provider",
+    "pk": "2e8de9cb-a0ed-44e2-ab6f-e05fb12b3170",
+    "fields": {
+      "slug": "funke",
+      "user": null,
+      "name": "Funke Ojo",
+      "initials": "FO",
+      "color": "bg-amber-600",
+      "trade": "House Cleaning",
+      "rating": "4.8",
+      "jobs_count": 94,
+      "distance_km": 2,
+      "city": "Toronto",
+      "lat": 43.6712,
+      "lng": -79.3832,
+      "years": 6,
+      "verified": true,
+      "from_price": 15000,
+      "about": "Deep cleaning, post-construction cleaning and recurring home cleaning plans with a vetted team.",
+      "created_at": "2026-07-31T14:19:50.661Z",
+      "updated_at": "2026-07-31T14:35:24.145Z"
+    }
+  },
+  {
+    "model": "marketplace.provider",
+    "pk": "3f0b0c9e-c727-426b-9e93-006873270ed0",
+    "fields": {
+      "slug": "chidi",
+      "user": null,
+      "name": "Chidi Nwosu",
+      "initials": "CN",
+      "color": "bg-violet-600",
+      "trade": "Plumber",
+      "rating": "4.6",
+      "jobs_count": 85,
+      "distance_km": 5,
+      "city": "Toronto",
+      "lat": 43.6851,
+      "lng": -79.3392,
+      "years": 5,
+      "verified": true,
+      "from_price": 6500,
+      "about": "Water heater installs, pipe replacement and emergency call-outs across Toronto and Mississauga.",
+      "created_at": "2026-07-31T14:19:50.643Z",
+      "updated_at": "2026-07-31T14:35:24.126Z"
+    }
+  },
+  {
+    "model": "marketplace.provider",
+    "pk": "d7cc134b-e7e4-47cd-88af-d7c427f031f0",
+    "fields": {
+      "slug": "aisha",
+      "user": null,
+      "name": "Aisha Suleiman",
+      "initials": "AS",
+      "color": "bg-rose-600",
+      "trade": "Plumber",
+      "rating": "4.5",
+      "jobs_count": 42,
+      "distance_km": 7,
+      "city": "Toronto",
+      "lat": 43.6532,
+      "lng": -79.2961,
+      "years": 3,
+      "verified": false,
+      "from_price": 5000,
+      "about": "Residential plumbing, borehole pump servicing, tap & shower fittings. Free inspection before final quote.",
+      "created_at": "2026-07-31T14:19:50.652Z",
+      "updated_at": "2026-07-31T14:35:24.136Z"
+    }
+  },
+  {
+    "model": "marketplace.provider",
+    "pk": "e1007c7e-196d-4e4c-96e9-7c4b3d36a116",
+    "fields": {
+      "slug": "emeka",
+      "user": null,
+      "name": "Emeka Adewale",
+      "initials": "EA",
+      "color": "bg-emerald-700",
+      "trade": "Master Plumber",
+      "rating": "4.9",
+      "jobs_count": 127,
+      "distance_km": 4,
+      "city": "Toronto",
+      "lat": 43.6172,
+      "lng": -79.3832,
+      "years": 8,
+      "verified": true,
+      "from_price": 8000,
+      "about": "Certified plumber specializing in residential leak repair, tap and shower installation, drain unclogging and full bathroom plumbing. Tools and standard fittings included.",
+      "created_at": "2026-07-31T14:19:50.626Z",
+      "updated_at": "2026-07-31T14:35:24.108Z"
+    }
+  },
+  {
+    "model": "marketplace.provider",
+    "pk": "f667cf19-00e1-46d5-b8ea-3a22c78b0e99",
+    "fields": {
+      "slug": "tunde",
+      "user": null,
+      "name": "Tunde Ibrahim",
+      "initials": "TI",
+      "color": "bg-blue-600",
+      "trade": "Solar Installer",
+      "rating": "4.7",
+      "jobs_count": 61,
+      "distance_km": 6,
+      "city": "Toronto",
+      "lat": 43.6532,
+      "lng": -79.4578,
+      "years": 7,
+      "verified": true,
+      "from_price": 50000,
+      "about": "Solar and inverter systems design, installation and battery maintenance for homes and small offices.",
+      "created_at": "2026-07-31T14:19:50.668Z",
+      "updated_at": "2026-07-31T14:35:24.154Z"
+    }
+  },
+  {
+    "model": "marketplace.providerreview",
+    "pk": "13a5de1a-3394-489d-97ee-07f5c5b296d6",
+    "fields": {
+      "provider": "e1007c7e-196d-4e4c-96e9-7c4b3d36a116",
+      "name": "Ngozi E.",
+      "stars": 5,
+      "text": "Fixed our kitchen leak in under an hour. Professional and tidy.",
+      "created_at": "2026-07-31T14:19:50.632Z"
+    }
+  },
+  {
+    "model": "marketplace.providerreview",
+    "pk": "3f713e70-b3b0-4d8e-93d9-2902a8ae5948",
+    "fields": {
+      "provider": "2e8de9cb-a0ed-44e2-ab6f-e05fb12b3170",
+      "name": "Ada N.",
+      "stars": 5,
+      "text": "Spotless job on our 3-bed flat. Booking again monthly.",
+      "created_at": "2026-07-31T14:19:50.664Z"
+    }
+  },
+  {
+    "model": "marketplace.providerreview",
+    "pk": "4063ea9c-1bc0-491b-8ce5-4e31e61abfc6",
+    "fields": {
+      "provider": "e1007c7e-196d-4e4c-96e9-7c4b3d36a116",
+      "name": "David O.",
+      "stars": 5,
+      "text": "Came same day, fair pricing, great communication. Highly recommend.",
+      "created_at": "2026-07-31T14:19:50.639Z"
+    }
+  },
+  {
+    "model": "marketplace.providerreview",
+    "pk": "79c51f49-f797-4945-9a1c-ebbc73a64cbc",
+    "fields": {
+      "provider": "f667cf19-00e1-46d5-b8ea-3a22c78b0e99",
+      "name": "Emma T.",
+      "stars": 5,
+      "text": "5kVA system installed neatly in one day. Great after-sales support.",
+      "created_at": "2026-07-31T14:19:50.673Z"
+    }
+  },
+  {
+    "model": "marketplace.providerreview",
+    "pk": "8769592f-3e49-4fd1-b989-dac9e0a7da97",
+    "fields": {
+      "provider": "3f0b0c9e-c727-426b-9e93-006873270ed0",
+      "name": "Sola A.",
+      "stars": 5,
+      "text": "Responded within the hour for an emergency burst pipe.",
+      "created_at": "2026-07-31T14:19:50.647Z"
+    }
+  },
+  {
+    "model": "marketplace.providerreview",
+    "pk": "a017e082-648e-4802-9c3c-5cd9a8db963b",
+    "fields": {
+      "provider": "d7cc134b-e7e4-47cd-88af-d7c427f031f0",
+      "name": "Kunle B.",
+      "stars": 4,
+      "text": "Good work on our bathroom refit, minor delay on day two.",
+      "created_at": "2026-07-31T14:19:50.657Z"
+    }
+  },
+  {
+    "model": "marketplace.job",
+    "pk": "174a98e6-9b79-4b82-b6b6-c6bc30dba28a",
+    "fields": {
+      "title": "Deep clean — 3 bed flat",
+      "description": "",
+      "category": "Cleaning",
+      "area": "North York",
+      "budget": 35000,
+      "status": "SCHEDULED",
+      "provider": "2e8de9cb-a0ed-44e2-ab6f-e05fb12b3170",
+      "posted_by": null,
+      "applicant_count": 6,
+      "note": "Sat 9:00 AM",
+      "created_at": "2026-07-31T14:19:50.683Z",
+      "updated_at": "2026-07-31T14:35:24.167Z"
+    }
+  },
+  {
+    "model": "marketplace.job",
+    "pk": "1902918d-86aa-4974-87de-97ad71199843",
+    "fields": {
+      "title": "Fix kitchen sink leak",
+      "description": "",
+      "category": "Plumbing",
+      "area": "Downtown",
+      "budget": 25000,
+      "status": "IN PROGRESS",
+      "provider": "e1007c7e-196d-4e4c-96e9-7c4b3d36a116",
+      "posted_by": null,
+      "applicant_count": 4,
+      "note": "Emeka arrived on site — 10:05 AM",
+      "created_at": "2026-07-31T14:19:50.677Z",
+      "updated_at": "2026-07-31T14:35:24.163Z"
+    }
+  },
+  {
+    "model": "marketplace.job",
+    "pk": "f6b5b1cc-11c3-48c6-8c81-84aff03c10e9",
+    "fields": {
+      "title": "CCTV setup for duplex",
+      "description": "",
+      "category": "Security",
+      "area": "Scarborough",
+      "budget": 180000,
+      "status": "OPEN",
+      "provider": null,
+      "posted_by": null,
+      "applicant_count": 2,
+      "note": "Posted 2 days ago",
+      "created_at": "2026-07-31T14:19:50.688Z",
+      "updated_at": "2026-07-31T14:35:24.171Z"
+    }
+  },
+  {
+    "model": "marketplace.jobapplication",
+    "pk": "40759364-0fbb-4954-b874-298413663791",
+    "fields": {
+      "job": "1902918d-86aa-4974-87de-97ad71199843",
+      "provider": "3f0b0c9e-c727-426b-9e93-006873270ed0",
+      "price": 20000,
+      "message": "Available this evening. Price covers labour only — parts billed at cost.",
+      "created_at": "2026-07-31T14:19:50.702Z"
+    }
+  },
+  {
+    "model": "marketplace.jobapplication",
+    "pk": "83c49a97-a500-4cbd-85b7-624b08940f1d",
+    "fields": {
+      "job": "1902918d-86aa-4974-87de-97ad71199843",
+      "provider": "e1007c7e-196d-4e4c-96e9-7c4b3d36a116",
+      "price": 22000,
+      "message": "I can come tomorrow at 10 AM with all tools. Includes 30-day guarantee on the repair.",
+      "created_at": "2026-07-31T14:19:50.696Z"
+    }
+  },
+  {
+    "model": "marketplace.jobapplication",
+    "pk": "a67247ad-5dd3-42c7-8bf6-1605d57afbcb",
+    "fields": {
+      "job": "1902918d-86aa-4974-87de-97ad71199843",
+      "provider": "d7cc134b-e7e4-47cd-88af-d7c427f031f0",
+      "price": 18500,
+      "message": "Can inspect first for free, then confirm final quote before starting.",
+      "created_at": "2026-07-31T14:19:50.706Z"
+    }
+  },
+  {
+    "model": "marketplace.messagethread",
+    "pk": "8ae0671e-1470-490c-855f-0019860bb653",
+    "fields": {
+      "slug": "funke",
+      "provider": "2e8de9cb-a0ed-44e2-ab6f-e05fb12b3170",
+      "user": null,
+      "unread": 0,
+      "time_label": "Yesterday",
+      "created_at": "2026-07-31T14:19:50.725Z"
+    }
+  },
+  {
+    "model": "marketplace.messagethread",
+    "pk": "ad9205f1-9e4a-4eb9-95ad-67ce64d66a4d",
+    "fields": {
+      "slug": "emeka",
+      "provider": "e1007c7e-196d-4e4c-96e9-7c4b3d36a116",
+      "user": null,
+      "unread": 2,
+      "time_label": "9:41 AM",
+      "created_at": "2026-07-31T14:19:50.711Z"
+    }
+  },
+  {
+    "model": "marketplace.messagethread",
+    "pk": "c6b14c45-6f80-4dfe-b139-086617c8852f",
+    "fields": {
+      "slug": "tunde",
+      "provider": "f667cf19-00e1-46d5-b8ea-3a22c78b0e99",
+      "user": null,
+      "unread": 0,
+      "time_label": "Tue",
+      "created_at": "2026-07-31T14:19:50.732Z"
+    }
+  },
+  {
+    "model": "marketplace.message",
+    "pk": "195977d3-35b6-4fff-b006-dd104b87c040",
+    "fields": {
+      "thread": "ad9205f1-9e4a-4eb9-95ad-67ce64d66a4d",
+      "sender": "provider",
+      "text": "Perfect. I'll bring replacement pipes just in case. If we need a new trap it's $3,500 extra — I'll confirm with you first.",
+      "time_label": "9:07 AM",
+      "created_at": "2026-07-31T14:19:50.718Z"
+    }
+  },
+  {
+    "model": "marketplace.message",
+    "pk": "541b3668-b2d3-45d0-8d85-0707fb35ffc8",
+    "fields": {
+      "thread": "ad9205f1-9e4a-4eb9-95ad-67ce64d66a4d",
+      "sender": "provider",
+      "text": "Good morning! Confirming our 10 AM appointment for the sink repair today.",
+      "time_label": "9:02 AM",
+      "created_at": "2026-07-31T14:19:50.715Z"
+    }
+  },
+  {
+    "model": "marketplace.message",
+    "pk": "5839396c-e06c-4e75-a7a9-fcdce9bcb61e",
+    "fields": {
+      "thread": "ad9205f1-9e4a-4eb9-95ad-67ce64d66a4d",
+      "sender": "client",
+      "text": "Sounds good 👍",
+      "time_label": "9:08 AM",
+      "created_at": "2026-07-31T14:19:50.719Z"
+    }
+  },
+  {
+    "model": "marketplace.message",
+    "pk": "73768e3f-4016-4562-817a-58987a906823",
+    "fields": {
+      "thread": "c6b14c45-6f80-4dfe-b139-086617c8852f",
+      "sender": "provider",
+      "text": "Sent you the solar quote 📎",
+      "time_label": "Tue",
+      "created_at": "2026-07-31T14:19:50.734Z"
+    }
+  },
+  {
+    "model": "marketplace.message",
+    "pk": "806d8d30-c17a-4f59-a123-1c21d64b847f",
+    "fields": {
+      "thread": "8ae0671e-1470-490c-855f-0019860bb653",
+      "sender": "client",
+      "text": "Hi Funke, can we do Saturday morning for the deep clean?",
+      "time_label": "4:10 PM",
+      "created_at": "2026-07-31T14:19:50.728Z"
+    }
+  },
+  {
+    "model": "marketplace.message",
+    "pk": "d993386c-058c-418b-87c4-b1a04fc04ef7",
+    "fields": {
+      "thread": "ad9205f1-9e4a-4eb9-95ad-67ce64d66a4d",
+      "sender": "provider",
+      "text": "I'm on my way, be there by 10 ✔️",
+      "time_label": "9:41 AM",
+      "created_at": "2026-07-31T14:19:50.720Z"
+    }
+  },
+  {
+    "model": "marketplace.message",
+    "pk": "df0152ca-cc5a-443c-95d5-629270dd5a76",
+    "fields": {
+      "thread": "ad9205f1-9e4a-4eb9-95ad-67ce64d66a4d",
+      "sender": "client",
+      "text": "Morning Emeka! Yes, 10 AM works. Gate code is 4482.",
+      "time_label": "9:05 AM",
+      "created_at": "2026-07-31T14:19:50.717Z"
+    }
+  },
+  {
+    "model": "marketplace.message",
+    "pk": "e60a2dbe-211d-4e30-9bfb-3ff3e97b3096",
+    "fields": {
+      "thread": "8ae0671e-1470-490c-855f-0019860bb653",
+      "sender": "provider",
+      "text": "Saturday 9 AM works. See you then!",
+      "time_label": "4:22 PM",
+      "created_at": "2026-07-31T14:19:50.729Z"
+    }
+  },
+  {
+    "model": "marketplace.wallettransaction",
+    "pk": "15f1d0fe-b036-4d71-8c23-60b612afc0de",
+    "fields": {
+      "user": null,
+      "label": "Wallet top-up",
+      "date_label": "Jul 15",
+      "amount": 100000,
+      "created_at": "2026-07-31T14:19:50.744Z"
+    }
+  },
+  {
+    "model": "marketplace.wallettransaction",
+    "pk": "9dcaec44-ae82-4e7d-b21c-38eb67383bc3",
+    "fields": {
+      "user": null,
+      "label": "Payment — AC servicing",
+      "date_label": "Jul 9",
+      "amount": -15000,
+      "created_at": "2026-07-31T14:19:50.747Z"
+    }
+  },
+  {
+    "model": "marketplace.wallettransaction",
+    "pk": "f8c7d987-4fa5-443c-86f8-8ae3ebe902d3",
+    "fields": {
+      "user": null,
+      "label": "Escrow — sink repair",
+      "date_label": "Today, 6:30 PM",
+      "amount": -22000,
+      "created_at": "2026-07-31T14:19:50.738Z"
+    }
+  }
+]

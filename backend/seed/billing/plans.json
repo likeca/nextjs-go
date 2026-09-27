@@ -1,0 +1,154 @@
+[
+  {
+    "model": "billing.plan",
+    "pk": "5f1e3c1a-0001-4a7e-9b1a-111111111111",
+    "fields": {
+      "name": "Starter",
+      "description": "Perfect for individuals and small projects",
+      "stripe_price_id": "price_starter_monthly",
+      "stripe_product_id": "prod_starter",
+      "amount": 999,
+      "currency": "usd",
+      "interval": "month",
+      "features": [
+        "Up to 10 projects",
+        "Basic analytics",
+        "Email support",
+        "1 GB storage",
+        "Community access"
+      ],
+      "is_popular": false,
+      "is_active": true,
+      "created_at": "2026-07-13T00:00:00Z",
+      "updated_at": "2026-07-13T00:00:00Z"
+    }
+  },
+  {
+    "model": "billing.plan",
+    "pk": "5f1e3c1a-0002-4a7e-9b1a-222222222222",
+    "fields": {
+      "name": "Professional",
+      "description": "Ideal for growing teams and businesses",
+      "stripe_price_id": "price_professional_monthly",
+      "stripe_product_id": "prod_professional",
+      "amount": 2999,
+      "currency": "usd",
+      "interval": "month",
+      "features": [
+        "Unlimited projects",
+        "Advanced analytics",
+        "Priority support",
+        "10 GB storage",
+        "Team collaboration",
+        "API access",
+        "Custom integrations"
+      ],
+      "is_popular": true,
+      "is_active": true,
+      "created_at": "2026-07-13T00:00:00Z",
+      "updated_at": "2026-07-13T00:00:00Z"
+    }
+  },
+  {
+    "model": "billing.plan",
+    "pk": "5f1e3c1a-0003-4a7e-9b1a-333333333333",
+    "fields": {
+      "name": "Enterprise",
+      "description": "For large organizations with advanced needs",
+      "stripe_price_id": "price_enterprise_monthly",
+      "stripe_product_id": "prod_enterprise",
+      "amount": 9999,
+      "currency": "usd",
+      "interval": "month",
+      "features": [
+        "Everything in Professional",
+        "Dedicated support",
+        "Unlimited storage",
+        "Advanced security",
+        "SLA guarantee",
+        "Custom contracts",
+        "On-premise deployment"
+      ],
+      "is_popular": false,
+      "is_active": true,
+      "created_at": "2026-07-13T00:00:00Z",
+      "updated_at": "2026-07-13T00:00:00Z"
+    }
+  },
+  {
+    "model": "billing.plan",
+    "pk": "5f1e3c1a-0004-4a7e-9b1a-444444444444",
+    "fields": {
+      "name": "Starter",
+      "description": "Perfect for individuals and small projects",
+      "stripe_price_id": "price_starter_yearly",
+      "stripe_product_id": "prod_starter",
+      "amount": 9999,
+      "currency": "usd",
+      "interval": "year",
+      "features": [
+        "Up to 10 projects",
+        "Basic analytics",
+        "Email support",
+        "1 GB storage",
+        "Community access"
+      ],
+      "is_popular": false,
+      "is_active": true,
+      "created_at": "2026-07-13T00:00:00Z",
+      "updated_at": "2026-07-13T00:00:00Z"
+    }
+  },
+  {
+    "model": "billing.plan",
+    "pk": "5f1e3c1a-0005-4a7e-9b1a-555555555555",
+    "fields": {
+      "name": "Professional",
+      "description": "Ideal for growing teams and businesses",
+      "stripe_price_id": "price_professional_yearly",
+      "stripe_product_id": "prod_professional",
+      "amount": 29999,
+      "currency": "usd",
+      "interval": "year",
+      "features": [
+        "Unlimited projects",
+        "Advanced analytics",
+        "Priority support",
+        "10 GB storage",
+        "Team collaboration",
+        "API access",
+        "Custom integrations"
+      ],
+      "is_popular": true,
+      "is_active": true,
+      "created_at": "2026-07-13T00:00:00Z",
+      "updated_at": "2026-07-13T00:00:00Z"
+    }
+  },
+  {
+    "model": "billing.plan",
+    "pk": "5f1e3c1a-0006-4a7e-9b1a-666666666666",
+    "fields": {
+      "name": "Enterprise",
+      "description": "For large organizations with advanced needs",
+      "stripe_price_id": "price_enterprise_yearly",
+      "stripe_product_id": "prod_enterprise",
+      "amount": 99999,
+      "currency": "usd",
+      "interval": "year",
+      "features": [
+        "Everything in Professional",
+        "Dedicated support",
+        "Unlimited storage",
+        "Advanced security",
+        "SLA guarantee",
+        "Custom contracts",
+        "On-premise deployment"
+      ],
+      "is_popular": false,
+      "is_active": true,
+      "created_at": "2026-07-13T00:00:00Z",
+      "updated_at": "2026-07-13T00:00:00Z"
+    }
+  }
+]
