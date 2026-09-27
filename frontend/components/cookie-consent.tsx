@@ -8,10 +8,11 @@ import { COOKIE_CONSENT_KEY } from "@/lib/config"
 
 export function CookieConsent() {
   const [showBanner, setShowBanner] = useState(false)
+  const enabled = process.env.NEXT_PUBLIC_ENABLE_COOKIE_CONSENT !== "false"
 
   useEffect(() => {
-    if (!localStorage.getItem(COOKIE_CONSENT_KEY)) setShowBanner(true)
-  }, [])
+    if (enabled && !localStorage.getItem(COOKIE_CONSENT_KEY)) setShowBanner(true)
+  }, [enabled])
 
   const dispatchConsent = (value: "accepted" | "declined") => {
     localStorage.setItem(COOKIE_CONSENT_KEY, value)
