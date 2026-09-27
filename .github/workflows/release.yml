@@ -48,8 +48,8 @@ jobs:
           file: ./backend/Dockerfile
           push: true
           tags: |
-            ghcr.io/${{ github.actor }}/nextjs-django-backend:${{ env.TODAY }}
-            ghcr.io/${{ github.actor }}/nextjs-django-backend:latest
+            ghcr.io/${{ github.actor }}/nextjs-go-backend:${{ env.TODAY }}
+            ghcr.io/${{ github.actor }}/nextjs-go-backend:latest
 
       - name: Build frontend
         uses: docker/build-push-action@v7
@@ -58,8 +58,8 @@ jobs:
           file: ./frontend/Dockerfile
           push: true
           tags: |
-            ghcr.io/${{ github.actor }}/nextjs-django-frontend:${{ env.TODAY }}
-            ghcr.io/${{ github.actor }}/nextjs-django-frontend:latest
+            ghcr.io/${{ github.actor }}/nextjs-go-frontend:${{ env.TODAY }}
+            ghcr.io/${{ github.actor }}/nextjs-go-frontend:latest
 
       - name: Remote ssh
         uses: appleboy/ssh-action@master

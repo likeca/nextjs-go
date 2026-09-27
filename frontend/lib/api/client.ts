@@ -1,5 +1,5 @@
 /**
- * Isomorphic HTTP client for the Django backend.
+ * Isomorphic HTTP client for the Go backend.
  *
  * Do NOT import `next/headers` here — this module must be safe to import from
  * both server and browser code (use `lib/api/server.ts` for server actions /
@@ -9,9 +9,9 @@
  */
 
 // In the browser API_INTERNAL_URL is never inlined (not NEXT_PUBLIC_), so
-// client code falls back to the same-origin /api/backend proxy — Django stays
+// client code falls back to the same-origin /api/backend proxy — the backend stays
 // private. Server code gets the internal origin directly.
-export const API_BASE = process.env.API_INTERNAL_URL || 'http://localhost:8000';
+export const API_BASE = process.env.API_INTERNAL_URL || 'http://localhost:8080';
 
 export class ApiError extends Error {
   status: number;

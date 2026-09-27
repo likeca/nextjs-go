@@ -1,16 +1,16 @@
 services:
   backend:
-    image: ghcr.io/likeca/nextjs-django-backend:latest
+    image: ghcr.io/likeca/nextjs-go-backend:latest
     container_name: backend
     build:
       context: backend
     network_mode: host
     env_file:
-      - backend/backend/settings/local.env
+      - backend/.env
     restart: unless-stopped
 
   frontend:
-    image: ghcr.io/likeca/nextjs-django-frontend:latest
+    image: ghcr.io/likeca/nextjs-go-frontend:latest
     container_name: frontend
     build:
       context: frontend
