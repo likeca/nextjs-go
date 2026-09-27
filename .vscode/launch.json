@@ -5,17 +5,13 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Backend: Django",
-      "type": "debugpy",
+      "name": "Backend: Go",
+      "type": "go",
       "request": "launch",
-      "cwd": "${workspaceFolder}/backend",
-      "program": "${workspaceFolder}/backend/manage.py",
-      "python": "${workspaceFolder}/backend/.venv/bin/python",
-      "args": ["runserver", "0.0.0.0:8000"],
-      "env": {
-        "DJANGO_ENVIRONMENT": "Development"
-      },
-      "django": true
+      "mode": "debug",
+      "program": "${workspaceFolder}/backend/cmd/api",
+      "envFile": "${workspaceFolder}/backend/.env",
+      "console": "integratedTerminal"
     },
     {
       "name": "Frontend: Next.js",
@@ -27,8 +23,11 @@
   ],
   "compounds": [
     {
-      "name": "Full Stack: Django + Next.js",
-      "configurations": ["Backend: Django", "Frontend: Next.js"],
+      "name": "Full Stack: Go + Next.js",
+      "configurations": [
+        "Frontend: Next.js",
+        "Backend: Go"
+      ],
       "stopAll": true
     }
   ]
