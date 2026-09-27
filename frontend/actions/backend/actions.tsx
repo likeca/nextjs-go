@@ -5,7 +5,7 @@ import { promisify } from "util";
 
 const execPromise = promisify(exec);
 
-export async function runMyScript() {
+export async function runScript() {
   try {
     // Ensure your script has execution permissions (chmod +x)
     const { stdout, stderr } = await execPromise("ls -al");

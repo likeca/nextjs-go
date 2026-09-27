@@ -99,7 +99,7 @@ export default async function Home() {
               <Button size="lg" variant="outline" asChild>
                 <Link href="#features">Learn More</Link>
               </Button>
-              {/* <BackendExecuteButton /> */}
+              <BackendExecuteButton />
               <GroupsButton />
             </div>
           </div>

@@ -23,7 +23,11 @@ export function GroupsButton() {
       <Button size="lg" onClick={handleClick} disabled={loading}>
         {loading ? 'Loading...' : 'Groups'}
       </Button>
-      {result && <pre className="text-left p-4 rounded text-sm overflow-auto">{result}</pre>}
+      {result && (
+        <pre className="text-left p-4 rounded text-sm overflow-auto">
+          {result}
+        </pre>
+      )}
     </div>
   );
 }

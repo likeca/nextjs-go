@@ -1,21 +1,28 @@
 "use client";
 
+import { useState } from "react";
+
 import { Button } from "@/components/ui/button";
-import { runMyScript } from "@/actions/backend/actions";
-import { useState as reactUseState } from "react";
+import { runScript } from "@/actions/backend/actions";
 
 export function BackendExecuteButton() {
-  const [result, setResult] = reactUseState<string | null>(null);
+  const [result, setResult] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
 
-  const handleAction = async () => {
-    const res = await runMyScript();
-    setResult(res.output ?? null);
+  const handleClick = async () => {
+    setLoading(true);
+    try {
+      const res = await runScript();
+      setResult(res.output ?? res.error ?? null);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div className="flex flex-col gap-4">
-      <Button size="lg" onClick={handleAction}>
-        Backend Execute Command
+      <Button size="lg" onClick={handleClick} disabled={loading}>
+        {loading ? 'Loading...' : 'Backend Execution'}
       </Button>
       {result && (
         <pre className="text-left p-4 rounded text-sm overflow-auto">
